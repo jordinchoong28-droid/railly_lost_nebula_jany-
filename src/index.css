@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Mobile-First Typography & Accessibility Scaling
+   Engineered specifically for native mobile screens & mobile app layouts
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* High-readability mobile app base sizing - simplified A, A+, A++, A+++ */
+html[data-font-size="a"],
+html[data-font-size="normal"],
+[data-font-size="a"],
+[data-font-size="normal"] {
+  font-size: 16px;
+  --app-font-scale: 1;
+}
+
+/* Calibrated accessibility scaling for seniors that keeps all text readable */
+html[data-font-size="a+"],
+html[data-font-size="large"],
+[data-font-size="a+"],
+[data-font-size="large"] {
+  font-size: 18.5px;
+  --app-font-scale: 1.20;
+}
+
+html[data-font-size="a++"],
+html[data-font-size="extra-large"],
+[data-font-size="a++"],
+[data-font-size="extra-large"] {
+  font-size: 21.5px;
+  --app-font-scale: 1.40;
+}
+
+html[data-font-size="a+++"],
+html[data-font-size="huge"],
+[data-font-size="a+++"],
+[data-font-size="huge"] {
+  font-size: 25px;
+  --app-font-scale: 1.65;
+}
+
+/* Ensure all small labels, badges and pixel utility classes scale with the font-size setting */
+[data-font-size="a+"] [class*="text-\["],
+[data-font-size="a+"] [class*="text-["],
+[data-font-size="a+"] .text-xs {
+  font-size: 0.88rem !important;
+  line-height: 1.35 !important;
+}
+
+[data-font-size="a++"] [class*="text-\["],
+[data-font-size="a++"] [class*="text-["],
+[data-font-size="a++"] .text-xs {
+  font-size: 1.02rem !important;
+  line-height: 1.35 !important;
+}
+
+[data-font-size="a+++"] [class*="text-\["],
+[data-font-size="a+++"] [class*="text-["],
+[data-font-size="a+++"] .text-xs {
+  font-size: 1.18rem !important;
+  line-height: 1.35 !important;
+}
+
+/* Ensure buttons and inputs scale their text seamlessly */
+[data-font-size="a+"] button,
+[data-font-size="a+"] input,
+[data-font-size="a+"] select {
+  font-size: 1.05rem;
+}
+
+[data-font-size="a++"] button,
+[data-font-size="a++"] input,
+[data-font-size="a++"] select {
+  font-size: 1.2rem;
+}
+
+[data-font-size="a+++"] button,
+[data-font-size="a+++"] input,
+[data-font-size="a+++"] select {
+  font-size: 1.38rem;
+}
+
+/* SVG map text scaling */
+[data-font-size="a+"] svg text {
+  font-size: 1.22em;
+}
+[data-font-size="a++"] svg text {
+  font-size: 1.45em;
+}
+[data-font-size="a+++"] svg text {
+  font-size: 1.70em;
+}
+
+/* High-contrast enhancements */
+.high-contrast-border {
+  border-width: 2px !important;
+}
+
+/* Yellow/Black High Contrast Mode (WCAG AAA) */
+.theme-high-contrast-light,
+[data-contrast="high-contrast-light"] {
+  background-color: #000000 !important;
+  color: #FACC15 !important;
+}
+
+.theme-high-contrast-light button,
+[data-contrast="high-contrast-light"] button {
+  border-color: #FACC15 !important;
+}
+
+.theme-high-contrast-light input,
+[data-contrast="high-contrast-light"] input {
+  background-color: #000000 !important;
+  color: #FACC15 !important;
+  border-color: #FACC15 !important;
+  border-width: 2px !important;
+}
+
+/* High Contrast Dark Mode */
+.theme-high-contrast-dark,
+[data-contrast="high-contrast-dark"] {
+  background-color: #020617 !important;
+  color: #FFFFFF !important;
+}
+
+/* Enhanced readability without overflowing bounding boxes */
+body {
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Box-containment safeguards: ensure all text stays inside its parent cards and buttons */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+button, input, select, textarea {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Clean text wrap safeguarding */
+.break-words-safe {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Mobile Safe Areas and Scroll Utilities */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Clean compact scrollbars */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+
+/* Active tap feedback for mobile touch */
+.tap-bounce {
+  transition: transform 0.1s ease-out;
+}
+.tap-bounce:active {
+  transform: scale(0.96);
+}
+
+

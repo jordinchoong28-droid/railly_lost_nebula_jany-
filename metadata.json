@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix Remix Remix Remix MRT Route \u0026 Accessibility Navigator",
+  "description": "Accessible Singapore MRT navigation with live Telegram disruption alerts, crowd densities, low-sensory options, offline underground map, and multilingual voice assistance.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
